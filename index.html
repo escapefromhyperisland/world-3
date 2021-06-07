@@ -5,105 +5,136 @@
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
     <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
-
 </head>
 
 <body>
     <a-scene inspector-plugin-recast>
-
         <a-assets>
+            <a-asset-item id="door" src="assets/door_scene.glb"></a-asset-item>
+
+
+
             <a-asset-item id="stairs"
                 src="https://cdn.glitch.com/7acbc202-7b8d-4862-bbfe-cefd2de22317%2Fscene.gltf?v=1621930947092">
             </a-asset-item>
-            <img id="wall"
-                src="https://st3.depositphotos.com/34793116/37567/i/450/depositphotos_375678572-stock-photo-old-wall-texture-black-white.jpg">
-            <img id="floor"
-                src="https://st3.depositphotos.com/34793116/37548/i/450/depositphotos_375484438-stock-photo-old-wall-texture-black-white.jpg">
+            <img id="woodTexture" src="assets/Wooden.jpeg" />
+            <img id="wall" src="assets/wallpaper.jpeg" />
+            <img id="floor" src="assets/redvelet.jpeg" />
             <!--<a-asset id="stairs-navmesh" src="/assets/navmesh-stairs2.gltf"></a-asset>-->
-            <a-asset id="newNav" src="/assets/newnav.gltf"></a-asset>
-
+            <a-asset id="newNav"
+                src="https://cdn.glitch.com/024b288a-5c29-484a-9955-5b4b1422322c%2Fnavmesh-stairs2.gltf?v=1622106370560">
+            </a-asset>
         </a-assets>
-
-
-
-
+        <a-sky color="black"></a-sky>
         <!--Camera-->
-        <a-entity id="rig" movement-controls="speed: 0.15; 
-                                 constrainToNavMesh: true;" position="0 1.6 0">
-            <a-entity camera position="0 1.6 0" look-controls="pointerLockEnabled: true"></a-entity>
+        <a-entity movement-controls="speed: 0.15; constrainToNavMesh: true">
+            <a-entity camera position="0 1.6 0" look-controls="pointerLockEnabled: true"
+                light="type: spot; intensity: 1.8; penumbra: 1; angle: 30;"></a-entity>
         </a-entity>
 
-
         <!--Stairs-->
-        <a-gltf-model src="#newNav" nav-mesh position="0 -1 0"></a-gltf-model>
+        <a-gltf-model src="#newNav" nav-mesh visible="false"></a-gltf-model>
 
-        <a-box color="grey" position="-0.00878 0.03576 -3.5" geometry="width: 2" material="" id="firstStep">
+        <a-box color="grey" position="-0.00878 0.03576 -3.5" geometry="width: 2" material="src:#woodTexture;"
+            id=" firstStep">
         </a-box>
 
-        <a-box color="grey" position="0.01644 0.58084 -4" geometry="width: 2" material="" id="secondStep">
+        <a-box color="grey" position="0.01644 0.58084 -4" geometry="width: 2" material="src:#woodTexture;"
+            id="secondStep">
         </a-box>
 
-        <a-box color="grey" position="0.00122 1.09377 -4.49106" geometry="width: 2" material="" id="thirdStep">
+        <a-box color="grey" position="0.00122 1.09377 -4.49106" geometry="width: 2" material="src:#woodTexture;"
+            id="thirdStep">
         </a-box>
 
-        <a-box color="grey" position="-0.00466 1.58323 -4.97327" geometry="width: 2" material="" id="fourthStep">
-        </a-box>
-
-
-
-
-
-
-
+        <a-box color="grey" position="-0.00466 1.58323 -9.5" scale=" 2 1 10" id="fourthStep"
+            material="src:#woodTexture;"></a-box>
         <!--Side walls for the stairs-->
 
-        <a-box id="sidewall" position="-1.06938 1.91651 -7.99783" rotation="-0.161 91.293 179.99"
-            geometry="width: 10; height: 10; depth: 0.1" material="src:#wall; repeat: 6 4"></a-box>
+        <a-box id="sideWall1" position="-1.06938 1.91651 -8.99783" rotation="-0.161 91.293 179.99"
+            geometry="width: 12; height: 10; depth: 0.1" material="src:#wall; repeat: 6 4">
+        </a-box>
 
-        <a-box id="sidewall" position="1.06938 1.91651 -7.99783" rotation="-0.161 91.293 179.99"
-            geometry="width: 10; height: 10; depth: 0.1" material="src:#wall; repeat: 6 4"></a-box>
-
-
+        <a-box id="sideWall2" position="1.06938 1.91651 -8.99783" rotation="-0.161 91.293 179.99"
+            geometry="width: 12; height: 10; depth: 0.1" material="src:#wall; repeat: 6 4"></a-box>
 
         <!--Wall left hand side-->
         <a-box class="wall" id="w0001" position="-2 2 -3" rotation="0 0 0" geometry="width:2.2; height:10; depth:0.1;"
             material="src:#wall; repeat:2 4;"></a-box>
 
-        <a-box class="wall" id="w0002" position="-3 2 0" rotation="0 -90 0" geometry="width:6; height:10; depth:0.1;"
+        <a-box class="wall" position="-3 2 0" rotation="0 -90 0" geometry="width:6; height:10; depth:0.1;"
             material="src:#wall; repeat:6 4;"></a-box>
 
         <!--Right hand side -->
-        <a-box class="wall" id="w0001" position="2 2 -3" rotation="0 0 0" geometry="width:2; height:10; depth:0.1;"
+        <a-box class="wall" position="2 2 -3" rotation="0 0 0" geometry="width:2; height:10; depth:0.1;"
             material="src:#wall; repeat:2 4;"></a-box>
 
-        <a-box class="wall" id="w0002" position="3 2 0" rotation="0 -90 0" geometry="width:6; height:10; depth:0.1;"
+        <a-box class="wall" position="3 2 0" rotation="0 -90 0" geometry="width:6; height:10; depth:0.1;"
             material="src:#wall; repeat:6 4;"></a-box>
 
-
-
-
-        <a-box class="wall" id="w0002" position="-3 2 0" rotation="0 -90 0" geometry="width:6; height:10; depth:0.1;"
+        <a-box class="wall" position="-3 2 0" rotation="0 -90 0" geometry="width:6; height:10; depth:0.1;"
             material="src:#wall; repeat:6 4;"></a-box>
 
         <!--Back walls-->
-        <a-box class="wall" id="w0003" position="0 2 3" rotation="0 0 0" geometry="width:6; height:10; depth:0.1;"
+        <a-box class="wall" position="0 2 3" rotation="0 0 0" geometry="width:6; height:10; depth:0.1;"
             material="src:#wall; repeat:6 4;"></a-box>
 
-        <a-box class="wall" id="w0004" position="3 2 2" rotation="0 -90 0" geometry="width:2; height:; depth:0.1;"
+        <a-box class="wall" position="3 2 2" rotation="0 -90 0" geometry="width:2; height:; depth:0.1;"
             material="src:#wall; repeat:2 4;"></a-box>
 
         <!--ground-->
         <a-plane position="0 0 0" rotation="-90 0 0" geometry="width:50; height:50;"
             material="src:#floor; repeat:111 111;"></a-plane>
 
+        <!-- Light and Shadow
+        
+         <a-light type="ambient" color="#333"></a-light>
+        <a-light type="point" intensity="1.4" position="0 0 -2"></a-light>-->
+
+
+        <!--Doors to levels-->
+
+        <!-- doo1 -->
+        <a-gltf-model id="door1" src="assets/door_scene.glb" scale="0.04 0.04 0.04" rotation="0 90 0"
+            position="-0.62 2.1 -5.9">
+        </a-gltf-model>
+
+        <!-- door3 -->
+        <a-gltf-model id="door1" src="assets/door_scene.glb" scale="0.04 0.04 0.04" rotation="0 90 0"
+            position="-0.62 2.1 -8.9">
+        </a-gltf-model>
+
+        <!-- door5 -->
+        <a-gltf-model id="door1" src="assets/door_scene.glb" scale="0.04 0.04 0.04" rotation="0 90 0"
+            position="-0.655 2.1 -11.5.9">
+        </a-gltf-model>
+
+        <!-- doo2 -->
+        <a-gltf-model id="door1" src="assets/door_scene.glb" scale="0.04 0.04 0.04" rotation="0 -90 0"
+            position="0.81 2.05 -5.5">
+        </a-gltf-model>
+
+        <!-- door4 -->
+        <a-gltf-model id="door1" src="assets/door_scene.glb" scale="0.04 0.04 0.04" rotation="0 -90 0"
+            position="0.75 2.05 -8">
+        </a-gltf-model>
+
+        <!-- door6 -->
+        <a-gltf-model id="door1" src="assets/door_scene.glb" scale="0.04 0.04 0.04" rotation="0 -90 0"
+            position="0.67 2.05 -11.5">
+        </a-gltf-model>
 
 
 
-        <!-- Light and Shadow-->
-        <a-light type="ambient" color="#333"></a-light>
-        <a-light type="point" intensity="1.4" position="0 0 -2"></a-light>
+
+
+
 
     </a-scene>
+
+
+
+
 </body>
 
 </html>
