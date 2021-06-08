@@ -4,7 +4,6 @@
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
     <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
-<<<<<<< HEAD
 </head>
 
 <body>
@@ -124,12 +123,6 @@
             position="0.67 2.05 -11.5">
         </a-gltf-model>
 
-
-
-
-
-
-
     </a-scene>
 
 
@@ -144,165 +137,4 @@
 </body>
 
 </html>
-=======
-  </head>
-
-  <body>
-    <a-scene inspector-plugin-recast>
-      <a-assets>
-        <a-asset-item
-          id="stairs"
-          src="https://cdn.glitch.com/7acbc202-7b8d-4862-bbfe-cefd2de22317%2Fscene.gltf?v=1621930947092"
-        >
-        </a-asset-item>
-        <img
-          id="wall"
-          src="https://st3.depositphotos.com/34793116/37567/i/450/depositphotos_375678572-stock-photo-old-wall-texture-black-white.jpg"
-        />
-        <img
-          id="floor"
-          src="https://st3.depositphotos.com/34793116/37548/i/450/depositphotos_375484438-stock-photo-old-wall-texture-black-white.jpg"
-        />
-        <!--<a-asset id="stairs-navmesh" src="/assets/navmesh-stairs2.gltf"></a-asset>-->
-        <a-asset id="newNav" src="https://cdn.glitch.com/024b288a-5c29-484a-9955-5b4b1422322c%2Fnavmesh-stairs2.gltf?v=1622106370560"></a-asset>
-      </a-assets>
-
-      <!--Camera-->
-  <a-entity movement-controls="speed: 0.15; constrainToNavMesh: true">
-        <a-entity
-          camera
-          position="0 1.6 0"
-          look-controls="pointerLockEnabled: true"
-        ></a-entity
-      ></a-entity>
-
-      <!--Stairs-->
-      <a-gltf-model src="#newNav" nav-mesh visible="false"></a-gltf-model>
-
-      <a-box
-        color="grey"
-        position="-0.00878 0.03576 -3.5"
-        geometry="width: 2"
-        material=""
-        id="firstStep"
-      >
-      </a-box>
-
-      <a-box
-        color="grey"
-        position="0.01644 0.58084 -4"
-        geometry="width: 2"
-        material=""
-        id="secondStep"
-      >
-      </a-box>
-
-      <a-box
-        color="grey"
-        position="0.00122 1.09377 -4.49106"
-        geometry="width: 2"
-        material=""
-        id="thirdStep"
-      >
-      </a-box>
-
-      <a-box
-        color="grey"
-        position="-0.00466 1.58323 -4.97327"
-        geometry="width: 2"
-        material=""
-        id="fourthStep"
-      >
-      </a-box>
-
-      <!--Side walls for the stairs-->
-
-      <a-box
-        position="-1.06938 1.91651 -7.99783"
-        rotation="-0.161 91.293 179.99"
-        geometry="width: 10; height: 10; depth: 0.1"
-        material="src:#wall; repeat: 6 4"
-      ></a-box>
-
-      <a-box
-        position="1.06938 1.91651 -7.99783"
-        rotation="-0.161 91.293 179.99"
-        geometry="width: 10; height: 10; depth: 0.1"
-        material="src:#wall; repeat: 6 4"
-      ></a-box>
-
-      <!--Wall left hand side-->
-      <a-box
-        class="wall"
-        id="w0001"
-        position="-2 2 -3"
-        rotation="0 0 0"
-        geometry="width:2.2; height:10; depth:0.1;"
-        material="src:#wall; repeat:2 4;"
-      ></a-box>
-
-      <a-box
-        class="wall"
-        position="-3 2 0"
-        rotation="0 -90 0"
-        geometry="width:6; height:10; depth:0.1;"
-        material="src:#wall; repeat:6 4;"
-      ></a-box>
-
-      <!--Right hand side -->
-      <a-box
-        class="wall"
-        position="2 2 -3"
-        rotation="0 0 0"
-        geometry="width:2; height:10; depth:0.1;"
-        material="src:#wall; repeat:2 4;"
-      ></a-box>
-
-      <a-box
-        class="wall"
-        position="3 2 0"
-        rotation="0 -90 0"
-        geometry="width:6; height:10; depth:0.1;"
-        material="src:#wall; repeat:6 4;"
-      ></a-box>
-
-      <a-box
-        class="wall"
-        position="-3 2 0"
-        rotation="0 -90 0"
-        geometry="width:6; height:10; depth:0.1;"
-        material="src:#wall; repeat:6 4;"
-      ></a-box>
-
-      <!--Back walls-->
-      <a-box
-        class="wall"
-        position="0 2 3"
-        rotation="0 0 0"
-        geometry="width:6; height:10; depth:0.1;"
-        material="src:#wall; repeat:6 4;"
-      ></a-box>
-
-      <a-box
-        class="wall"
-        position="3 2 2"
-        rotation="0 -90 0"
-        geometry="width:2; height:; depth:0.1;"
-        material="src:#wall; repeat:2 4;"
-      ></a-box>
-
-      <!--ground-->
-      <a-plane
-        position="0 0 0"
-        rotation="-90 0 0"
-        geometry="width:50; height:50;"
-        material="src:#floor; repeat:111 111;"
-      ></a-plane>
-
-      <!-- Light and Shadow-->
-      <a-light type="ambient" color="#333"></a-light>
-      <a-light type="point" intensity="1.4" position="0 0 -2"></a-light>
-    </a-scene>
-  </body>
-</html>
->>>>>>> 200ff077d266d54b085f1aa8301b885c8edb7bf1
+  
