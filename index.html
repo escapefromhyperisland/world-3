@@ -10,7 +10,7 @@
     <a-scene inspector-plugin-recast>
         <a-assets>
             <a-asset-item id="door" src="assets/door_scene.glb"></a-asset-item>
-
+            <a-asset-item id="bed" src="assets/bed.glb"></a-asset-item>
 
 
             <a-asset-item id="stairs"
@@ -28,9 +28,11 @@
         <!--Camera-->
         <a-entity movement-controls="speed: 0.15; constrainToNavMesh: true">
             <a-entity camera position="0 1.6 0" look-controls="pointerLockEnabled: true"
-                light="type: spot; intensity: 1.8; penumbra: 1; angle: 30;"></a-entity>
+            light="type: spot; intensity: 1.8; penumbra: 1; angle: 30;"><a-sound src="url(assets/group3.mp3)" autoplay="true"
+               position="0 0 0" loop="true" volume="0.5"></a-sound>
+            </a-entity>
         </a-entity>
-
+        <!-- light="type: spot; intensity: 1.8; penumbra: 1; angle: 30;"-->
         <!--Stairs-->
         <a-gltf-model src="#newNav" nav-mesh visible="false"></a-gltf-model>
 
@@ -84,6 +86,12 @@
         <!--ground-->
         <a-plane position="0 0 0" rotation="-90 0 0" geometry="width:50; height:50;"
             material="src:#floor; repeat:111 111;"></a-plane>
+        <!--bed-->
+        <a-gltf-model rotation="-4.234158106016784 -156.0135428251475 9.421145025336125" scale="0.005 0.005 0.005" position="1.90327 0.36687 1.25558" gltf-model="assets/bed.glb">
+        </a-gltf-model>
+        <!--Text-->
+        <a-text value="Greetings Stranger!!!" position="2.36045 3.19133 -1.03469" rotation="0 -89.05425713938872 0" text=""></a-text>
+        <a-text value="You are stuck in your dream, the only way to get out of it is to solve whats behind the doors." position="2.1358 2.72768 -2.19748" rotation="0 -89.05425713938872 0" text=""></a-text>
 
         <!-- Light and Shadow
         
