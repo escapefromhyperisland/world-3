@@ -95,7 +95,7 @@
         <!--Doors to levels-->
 
         <!-- doo1 -->
-        <a-gltf-model id="door1" src="assets/door_scene.glb" scale="0.04 0.04 0.04" rotation="0 90 0"
+        <a-gltf-model id="door0" src="assets/door_scene.glb" scale="0.04 0.04 0.04" rotation="0 90 0"
             position="-0.62 2.1 -5.9">
         </a-gltf-model>
 
@@ -105,22 +105,22 @@
         </a-gltf-model>
 
         <!-- door5 -->
-        <a-gltf-model id="door1" src="assets/door_scene.glb" scale="0.04 0.04 0.04" rotation="0 90 0"
+        <a-gltf-model id="door2" src="assets/door_scene.glb" scale="0.04 0.04 0.04" rotation="0 90 0"
             position="-0.655 2.1 -11.5.9">
         </a-gltf-model>
 
         <!-- doo2 -->
-        <a-gltf-model id="door1" src="assets/door_scene.glb" scale="0.04 0.04 0.04" rotation="0 -90 0"
+        <a-gltf-model id="door3" src="assets/door_scene.glb" scale="0.04 0.04 0.04" rotation="0 -90 0"
             position="0.81 2.05 -5.5">
         </a-gltf-model>
 
         <!-- door4 -->
-        <a-gltf-model id="door1" src="assets/door_scene.glb" scale="0.04 0.04 0.04" rotation="0 -90 0"
+        <a-gltf-model id="door4" src="assets/door_scene.glb" scale="0.04 0.04 0.04" rotation="0 -90 0"
             position="0.75 2.05 -8">
         </a-gltf-model>
 
         <!-- door6 -->
-        <a-gltf-model id="door1" src="assets/door_scene.glb" scale="0.04 0.04 0.04" rotation="0 -90 0"
+        <a-gltf-model id="door5" src="assets/door_scene.glb" scale="0.04 0.04 0.04" rotation="0 -90 0"
             position="0.67 2.05 -11.5">
         </a-gltf-model>
 
@@ -133,6 +133,12 @@
     </a-scene>
 
 
+    <script>
+        document.querySelector('#door0')
+            .addEventListener('click', e => {
+                location.href = ""
+            });
+    </script>'
 
 
 </body>
