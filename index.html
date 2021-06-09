@@ -28,7 +28,8 @@
         <!--Camera-->
         <a-entity movement-controls="speed: 0.15; constrainToNavMesh: true">
             <a-entity camera position="0 1.6 0" look-controls="pointerLockEnabled: true"
-            light="type: spot; intensity: 1.8; penumbra: 1; angle: 30;"><a-sound src="url(assets/group3.mp3)" autoplay="true"
+            light="type: spot; intensity: 1.8; penumbra: 1; angle: 30;"><a-entity cursor position="0 0 -1" geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.02"
+            material="color: #fff; shader: flat"></a-entity><a-sound src="url(assets/group3.mp3)" autoplay="true"
                position="0 0 0" loop="true" volume="0.5"></a-sound>
             </a-entity>
         </a-entity>
@@ -137,7 +138,27 @@
     <script>
         document.querySelector('#door0')
             .addEventListener('click', e => {
-                location.href = ""
+                location.href = "https://sofiacronstrom.github.io/dizzy-dream/"
+            });
+        document.querySelector('#door1')
+            .addEventListener('click', e => {
+                location.href = "https://sofiacronstrom.github.io/dizzy-dream/"
+            });
+        document.querySelector('#door2')
+            .addEventListener('click', e => {
+                location.href = "https://sofiacronstrom.github.io/dizzy-dream/"
+            });
+        document.querySelector('#door3')
+            .addEventListener('click', e => {
+                location.href = "https://sofiacronstrom.github.io/dizzy-dream/"
+            });
+        document.querySelector('#door4')
+            .addEventListener('click', e => {
+                location.href = "https://sofiacronstrom.github.io/dizzy-dream/"
+            });
+        document.querySelector('#door5')
+            .addEventListener('click', e => {
+                location.href = "https://sofiacronstrom.github.io/dizzy-dream/"
             });
     </script>'
 
